@@ -1,0 +1,41 @@
+# ==========================================
+# Dependencies & Package Managers
+# ==========================================
+node_modules/
+.pnpm-store/
+.yarn/
+
+# ==========================================
+# TypeScript / Build Output
+# ==========================================
+# Ignore the compiled JavaScript output folder
+dist/
+build/
+out/
+tsbuildinfo/
+
+# ==========================================
+# IDEs & Editors (VS Code Specific)
+# ==========================================
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+# Ignore local workspace history & settings
+.history/
+*.code-workspace
+
+# ==========================================
+# Environment Variables & Secrets
+# ==========================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+
+# ==========================================
+# System / OS Files
+# ==========================================
+.DS_Store
+Thumbs.db
