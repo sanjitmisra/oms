@@ -19,18 +19,17 @@ export const newOrder = (
 export const updateInventory = (order: Order, inventory: Inventory): {updatedOrder: Order, updatedInventory: Inventory} => {
     
     const orderedItemName = order.item.name;
-    let inventoryLevel = 0;
-
 
     // Check if the requested item exists in the inventory
-    if(orderedItemName in inventory){
-        inventoryLevel = inventory[orderedItemName].quantity || 0;
-    }
-    else return {
+    if(!(orderedItemName in inventory)){
+        return {
         updatedInventory: inventory,
         updatedOrder: {...order, status: "Cancelled"}
+        }
     }
-
+    
+    const inventoryLevel = inventory[orderedItemName].quantity;
+    
     // Check if there is sufficient stock
     if (inventoryLevel < order.item.quantity) {
         console.log("Out of stock.");
