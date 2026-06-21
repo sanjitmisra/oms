@@ -20,7 +20,6 @@ export interface InventoryItem {
 export interface Order {
     readonly id: number;
     readonly item: InventoryItem;
-    readonly quantity: number;
     readonly customer: Customer;
     readonly status: OrderStatus;
 }
